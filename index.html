@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./reste.css">
+    <script src="./fetch.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="music">
+            <!-- 头部 -->
+            <div class="head">
+                <p>拉尔音乐盒</p>
+                <input type="text" class="seek" v-model="task" @keyup.enter="hunt">
+
+                <em class="seek_icon"></em>
+            </div>
+            <!-- 中间 -->
+            <div class="centre_kb">
+                <!-- 歌曲列表 -->
+                <ul class="song_list">
+                    <li v-for="(item,index) in TheSongList" :key="item.id" v-text="item.name"></li>
+                </ul>
+
+                <!-- 唱盘部分 -->
+                <div class="turntable">
+                    <!-- 针 -->
+                    <div class="turntable1">
+
+                    </div>
+                    <!-- 光盘 -->
+                    <div class="turntable2"></div>
+                </div>
+                <!-- 留言 -->
+                <ul class="leave">
+
+                </ul>
+            </div>
+            <!-- 播放部分 -->
+            <div class="play">
+                <audio class="play_au" src="" controls="controls"></audio>
+            </div>
+
+        </div>
+    </div>
+</body>
+<script src="./node_modules/axios/dist/axios.js"></script>
+<script src="./node_modules/vue/dist/vue.js"></script>
+<script src="./index.js"></script>
+</html>

@@ -1,0 +1,89 @@
+#app {
+  display: flex;
+}
+#app .music {
+  position: relative;
+  width: 800px;
+  height: 600px;
+  border-radius: 10px;
+  border: 1px solid gray;
+  margin: 100px auto;
+}
+#app .music .head {
+  position: relative;
+  width: 800px;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  background: #5dc0e2;
+  border-radius: 10px 10px 10px 10px;
+}
+#app .music .head p {
+  color: white;
+  font-weight: 200;
+  line-height: 60px;
+}
+#app .music .head .seek {
+  width: 300px;
+  height: 30px;
+  background: white;
+  margin: 14px 16px 0 0 ;
+}
+#app .music .head em.seek_icon {
+  position: absolute;
+  right: 25px;
+  top: 19px;
+  width: 20px;
+  height: 20px;
+  background: url(images/seek.png);
+  background-size: 20px;
+}
+#app .music .centre_kb {
+  width: 800px;
+  height: 480px;
+  display: flex;
+  justify-content: space-between;
+}
+#app .music .centre_kb ul.song_list {
+  width: 200px;
+  height: 480px;
+  overflow-y: scroll;
+}
+#app .music .centre_kb .turntable {
+  width: 400px;
+  height: 480px;
+  background: yellow;
+  position: relative;
+}
+#app .music .centre_kb .turntable .turntable1 {
+  position: absolute;
+  width: 140px;
+  height: 155px;
+  background: url(images/player_bar.png) no-repeat;
+  top: 0;
+  left: 45%;
+  z-index: 10;
+  transform-origin: 10px 10px;
+  transform: rotate(-17deg);
+}
+#app .music .centre_kb .turntable .turntable2 {
+  position: absolute;
+  background: url(images/disc.png);
+  width: 254px;
+  height: 255px;
+  top: 18%;
+  left: 17%;
+}
+#app .music .centre_kb ul.leave {
+  width: 200px;
+  height: 480px;
+  overflow-y: scroll;
+}
+#app .music .play {
+  width: 800px;
+  height: 60px;
+  background: pink;
+}
+#app .music .play .play_au {
+  width: 800px;
+}
