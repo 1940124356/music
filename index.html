@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
     <link rel="stylesheet" href="./index.css">
     <link rel="stylesheet" href="./reste.css">
     <script src="./fetch.js"></script>
+    <style>
+        [v-cloak] {}
+    </style>
 </head>
 
 <body>
@@ -24,27 +26,36 @@
             <!-- 中间 -->
             <div class="centre_kb">
                 <!-- 歌曲列表 -->
-                <ul class="song_list">
-                    <li v-for="(item,index) in TheSongList" :key="item.id" v-text="item.name"></li>
-                </ul>
-
+                <kb-song-list :thesong="TheSongList" @click="play"></kb-song-list>
                 <!-- 唱盘部分 -->
                 <div class="turntable">
                     <!-- 针 -->
-                    <div class="turntable1">
+                    <div class="turntable1" :class="{player_bar:isbol}">
 
                     </div>
                     <!-- 光盘 -->
-                    <div class="turntable2"></div>
+                    <div class="turntable2" 
+                    :class="{autorotate:isbol}">
+                        <img :src="songImg" alt="">
+                    </div>
                 </div>
                 <!-- 留言 -->
-                <ul class="leave">
-
-                </ul>
+                <kb-song-comment :thecomment="TheSongComment"></kb-song-comment>
+                
             </div>
             <!-- 播放部分 -->
             <div class="play">
-                <audio class="play_au" src="" controls="controls"></audio>
+                <audio class="play_au" 
+                :src="songUrl" 
+                controls="controls" 
+                preload="preload" 
+                autoplay="autoplay"
+                @play="zhuangtai(true)" 
+                @pause="zhuangtai(false)"
+                
+                    >
+                    <source type="audio/mpeg" />
+                </audio>
             </div>
 
         </div>
@@ -53,4 +64,5 @@
 <script src="./node_modules/axios/dist/axios.js"></script>
 <script src="./node_modules/vue/dist/vue.js"></script>
 <script src="./index.js"></script>
+
 </html>

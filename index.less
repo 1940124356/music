@@ -1,8 +1,9 @@
 
 #app {
       display: flex;
-      
+      background: url(./images/bg1.jpeg);
     .music {
+      background: rgba(255,255,255,0.2);
       position: relative;
       width: 800px;
       height: 600px;
@@ -51,14 +52,33 @@
           width: 200px;
           height: 480px;
           overflow-y: scroll;
+          li{
+            background: url(./images/bofang.png)no-repeat;
+            position: relative;
+            height: 30px;
+            width: 200px;
+            font-size: 16px;
+            color: #f8f1f1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: center;
+            line-height: 30px;
+            em.sp{
+              position: absolute;
+              right: 15px;
+              width: 30px;
+              height: 30px;
+              background: url(./images/shiping.png);
+            }
+          }
         }
   
         .turntable {
           width: 400px;
           height: 480px;
-          background: yellow;
           position: relative;
           .turntable1 {
+            transition: all 0.2s linear;
             position: absolute;
             width: 140px;
             height: 155px;
@@ -68,6 +88,9 @@
             transform-origin:10px 10px;
             transform:rotate(-17deg) ;
           }
+          .player_bar {
+            transform: rotate(0deg);
+          }
   
           .turntable2 {
             position: absolute;
@@ -75,6 +98,13 @@
             width: 254px;
             height: 255px;
             top: 18%;left: 17%;
+            img{
+              position: absolute;
+              top: 23%;left: 23%;
+              border-radius: 50%;
+              width: 140px;
+              height: 140px;
+            }
           }
         }
   
@@ -82,6 +112,36 @@
           width: 200px;
           height: 480px;
           overflow-y: scroll;
+          li{
+            width: 200px;
+            display: flex;
+            padding: 5px;
+            .portrait{
+              display: block;
+              width: 30px;
+              height: 30px;
+              margin: 10px;
+              
+              img{
+                border-radius: 50%;
+                width: 100%;
+                height: 100%;
+              }
+            }
+            .leave{
+              width: 130px;
+              p{
+                width: 130px;
+                font-size: 18px;
+
+              }
+              div{
+                width: 130px;
+                font-size: 12px;
+                color: white;
+              }
+            }
+          }
         }
       }
   
@@ -95,3 +155,20 @@
       }
     }
   }
+
+  .autorotate {
+    animation-name: running;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+@keyframes running{
+  0% {
+    transform: rotate(0deg);
+}
+
+100% {
+    transform: rotate(360deg);
+}
+}
+

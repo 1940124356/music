@@ -1,7 +1,9 @@
 #app {
   display: flex;
+  background: url(images/bg1.jpeg);
 }
 #app .music {
+  background: rgba(255, 255, 255, 0.2);
   position: relative;
   width: 800px;
   height: 600px;
@@ -49,13 +51,32 @@
   height: 480px;
   overflow-y: scroll;
 }
+#app .music .centre_kb ul.song_list li {
+  background: url(images/bofang.png) no-repeat;
+  position: relative;
+  height: 30px;
+  width: 200px;
+  font-size: 16px;
+  color: #f8f1f1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  line-height: 30px;
+}
+#app .music .centre_kb ul.song_list li em.sp {
+  position: absolute;
+  right: 15px;
+  width: 30px;
+  height: 30px;
+  background: url(images/shiping.png);
+}
 #app .music .centre_kb .turntable {
   width: 400px;
   height: 480px;
-  background: yellow;
   position: relative;
 }
 #app .music .centre_kb .turntable .turntable1 {
+  transition: all 0.2s linear;
   position: absolute;
   width: 140px;
   height: 155px;
@@ -66,6 +87,9 @@
   transform-origin: 10px 10px;
   transform: rotate(-17deg);
 }
+#app .music .centre_kb .turntable .player_bar {
+  transform: rotate(0deg);
+}
 #app .music .centre_kb .turntable .turntable2 {
   position: absolute;
   background: url(images/disc.png);
@@ -74,10 +98,46 @@
   top: 18%;
   left: 17%;
 }
+#app .music .centre_kb .turntable .turntable2 img {
+  position: absolute;
+  top: 23%;
+  left: 23%;
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+}
 #app .music .centre_kb ul.leave {
   width: 200px;
   height: 480px;
   overflow-y: scroll;
+}
+#app .music .centre_kb ul.leave li {
+  width: 200px;
+  display: flex;
+  padding: 5px;
+}
+#app .music .centre_kb ul.leave li .portrait {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+}
+#app .music .centre_kb ul.leave li .portrait img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+#app .music .centre_kb ul.leave li .leave {
+  width: 130px;
+}
+#app .music .centre_kb ul.leave li .leave p {
+  width: 130px;
+  font-size: 18px;
+}
+#app .music .centre_kb ul.leave li .leave div {
+  width: 130px;
+  font-size: 12px;
+  color: white;
 }
 #app .music .play {
   width: 800px;
@@ -86,4 +146,18 @@
 }
 #app .music .play .play_au {
   width: 800px;
+}
+.autorotate {
+  animation-name: running;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes running {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
